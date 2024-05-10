@@ -14,23 +14,27 @@
 
 @layer base {
     h1 {
-        @apply font-KumbhBold  text-dark text-[56px];
+        @apply font-KumbhBold  text-[56px] text-dark;
     }
 
     h2 {
-        @apply font-KumbhBold text-dark text-[20px] leading-[28px];
+        @apply font-KumbhBold text-[20px] leading-[28px] text-dark;
     }
 
     h3 {
-        @apply font-KumbhBold text-lightGray text-base uppercase leading-[48px] tracking-[5px];
+        @apply font-KumbhBold text-base uppercase leading-[48px] tracking-[5px] text-lightGray;
     }
 
     p {
-        @apply font-KumbhRegular text-lightGray text-[18px] leading-[28px];
+        @apply font-KumbhRegular text-[18px] leading-[28px] text-lightGray;
     }
 
     button {
-        @apply font-KumbhBold rounded-[28px];
+        @apply rounded-[28px] font-KumbhBold;
+    }
+
+    input {
+        @apply focus:outline-none;
     }
 }
 
