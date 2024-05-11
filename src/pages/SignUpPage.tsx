@@ -1,16 +1,9 @@
 import officeliteLogo from '../assets/shared/logo.svg';
 import Countdown from '../components/Countdown';
 import { Link } from 'react-router-dom';
-import Input from '../components/Input';
-import Dropdown from '../components/Dropdown';
-import { useState } from 'react';
-import { pricingOptions } from '@/utils/constants';
+import SignUpForm from '@/components/SignUpForm';
 
 const SignUpPage = () => {
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
-    const dropdownOptions = pricingOptions.map((option) => {
-        return { name: `${option.pricingTier} Pack`, price: option.price };
-    });
 
     return (
         <>
@@ -34,22 +27,7 @@ const SignUpPage = () => {
                             <Countdown />
                         </div>
                     </section>
-                    <section className="mb-14 flex h-fit w-fit items-center justify-center rounded-xl px-11 py-10 shadow-2xl">
-                        <form className="flex flex-col">
-                            <Input type="text" name="name" placeholder="Name" label="Name" />
-                            <Input type="text" name="email" placeholder="Email address" label="Email address" />
-                            <Dropdown
-                                options={dropdownOptions}
-                                selectedOptionIndex={selectedOptionIndex}
-                                setSelectedOptionIndex={setSelectedOptionIndex}
-                            />
-                            <Input type="number" name="phone" placeholder="Phone number" label="Phone number" />
-                            <Input type="text" name="company" placeholder="Company" label="Company" />
-                            <button type="submit" className=" h-[56px] bg-accentBlue text-white hover:bg-lightBlue">
-                                Get on the list
-                            </button>
-                        </form>
-                    </section>
+                    <SignUpForm />
                 </main>
             </div>
             {/* <div className="relative -z-20 -mt-[521px] h-[603px] bg-veryDark">
