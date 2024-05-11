@@ -5,36 +5,7 @@ import illustrations from '../assets/home/Group-15.svg';
 import circlePattern from '../assets/home/bg-pattern-header.svg';
 import footerPattern from '../assets/home/bg-pattern-footer.svg';
 import { Link } from 'react-router-dom';
-
-const pricingOptions = [
-    {
-        title: 'Free',
-        subtitle: 'Up to 5 users for free',
-        pricingTier: 'Basic',
-        firstBodySentence: 'Basic document collaboration',
-        secondBodySentence: '2 GB storage',
-        thirdBodySentence: 'Great security and support',
-        isAccentVariant: false,
-    },
-    {
-        title: '$9.99',
-        subtitle: 'Per user, billed monthly',
-        pricingTier: 'Pro',
-        firstBodySentence: 'All essential integrations',
-        secondBodySentence: '50 GB storage',
-        thirdBodySentence: 'More control and insights',
-        isAccentVariant: true,
-    },
-    {
-        title: '$19.99',
-        subtitle: 'Per user, billed monthly',
-        pricingTier: 'Ultimate',
-        firstBodySentence: 'Robust work management',
-        secondBodySentence: '100 GB storage',
-        thirdBodySentence: 'VIP support',
-        isAccentVariant: false,
-    },
-];
+import { pricingOptions } from '@/utils/constants';
 
 const HomePage = () => {
     return (

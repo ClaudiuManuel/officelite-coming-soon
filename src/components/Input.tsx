@@ -1,6 +1,13 @@
 import errorInputIcon from '../assets/sign-up/icon-cross.svg';
 
-const Input = ({ label, name, type, placeholder }) => {
+export type InputProps = {
+    label: string;
+    name: string;
+    type: React.HTMLInputTypeAttribute;
+    placeholder: string;
+}
+
+const Input: React.FC<InputProps> = ({ label, name, type, placeholder }) => {
     return (
         <div className="relative">
             <label hidden htmlFor="phone">

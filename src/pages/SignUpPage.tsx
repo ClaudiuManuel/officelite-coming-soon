@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom';
 import Input from '../components/Input';
 import Dropdown from '../components/Dropdown';
 import { useState } from 'react';
+import { pricingOptions } from '@/utils/constants';
 
 const SignUpPage = () => {
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
+    const dropdownOptions = pricingOptions.map((option) => {
+        return { name: `${option.pricingTier} Pack`, price: option.price };
+    });
 
     return (
         <>
@@ -35,11 +39,7 @@ const SignUpPage = () => {
                             <Input type="text" name="name" placeholder="Name" label="Name" />
                             <Input type="text" name="email" placeholder="Email address" label="Email address" />
                             <Dropdown
-                                options={[
-                                    { name: 'Basic Pack', tier: 'Free' },
-                                    { name: 'Pro Pack', tier: 'Free' },
-                                    { name: 'Ultimate Pack', tier: 'Free' },
-                                ]}
+                                options={dropdownOptions}
                                 selectedOptionIndex={selectedOptionIndex}
                                 setSelectedOptionIndex={setSelectedOptionIndex}
                             />

@@ -2,22 +2,24 @@ import { useState } from 'react';
 import arrow from '@assets/sign-up/arrow.svg';
 import tick from '../assets/sign-up/tick.svg';
 import { cn } from '../utils/tailwindUtilities';
+import { DropdownProps } from '@/types';
 
-const Dropdown = ({ options, selectedOptionIndex, setSelectedOptionIndex }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSelectedOptionIndex }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
         <>
-            <span
+            <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="mb-6 flex  h-[45px] w-[360px] cursor-pointer flex-row items-baseline justify-between border-b border-b-lightGray/25 pl-3 pr-6 font-KumbhBold text-dark"
+                type="button"
+                className="mb-6 flex h-[45px]  w-[360px] cursor-pointer flex-row items-baseline justify-between rounded-none border-b border-b-lightGray/25 pl-3 pr-6 font-KumbhBold text-dark"
             >
                 <span>
                     {options[selectedOptionIndex].name}{' '}
-                    <span className="ml-2 text-lightGray">{options[selectedOptionIndex].tier}</span>
+                    <span className="ml-2 text-lightGray">{options[selectedOptionIndex].price}</span>
                 </span>
                 <img src={arrow} />
-            </span>
+            </button>
 
             {isOpen && (
                 <div className="relative">
@@ -38,7 +40,7 @@ const Dropdown = ({ options, selectedOptionIndex, setSelectedOptionIndex }) => {
                                 >
                                     <span>
                                         {option.name}
-                                        <span className="ml-2 text-lightGray"> {option.tier} </span>
+                                        <span className="ml-2 text-lightGray"> {option.price} </span>
                                     </span>
                                     {index === selectedOptionIndex && <img src={tick} />}
                                 </li>

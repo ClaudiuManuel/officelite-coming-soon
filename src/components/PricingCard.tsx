@@ -1,9 +1,10 @@
 import { cn } from '../utils/tailwindUtilities';
 import circlesPatternCard from '../assets/home/bg-pattern-pricing.svg';
 import { Link } from 'react-router-dom';
+import { Option } from '@/types';
 
-const PricingCard = ({
-    title,
+const PricingCard: React.FC<Option> = ({
+    price,
     pricingTier,
     subtitle,
     firstBodySentence,
@@ -28,7 +29,7 @@ const PricingCard = ({
             {isAccentVariant && <img src={circlesPatternCard} className="absolute -top-[76%] -z-10 max-w-none"></img>}
             <header className="text-center">
                 <h2 className={headerTextColors}>{pricingTier}</h2>
-                <h1 className={`${headerTextColors} mb-4 mt-10 leading-none`}>{title}</h1>
+                <h1 className={`${headerTextColors} mb-4 mt-10 leading-none`}>{price}</h1>
                 <p className={headerTextColors}>{subtitle}</p>
             </header>
             <div className="mb-8 mt-14 flex flex-col gap-4">
