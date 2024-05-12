@@ -2,9 +2,9 @@ import officeliteLogo from '../assets/shared/logo.svg';
 import Countdown from '../components/Countdown';
 import { Link } from 'react-router-dom';
 import SignUpForm from '@/components/SignUpForm';
+import circlePattern from '@assets/sign-up/signup-circle-pattern.svg';
 
 const SignUpPage = () => {
-
     return (
         <>
             <div className="mx-auto max-w-[1340px]">
@@ -24,15 +24,15 @@ const SignUpPage = () => {
                                 early subscribers. We are moving into final development and getting ready for official
                                 launch soon.
                             </p>
-                            <Countdown />
+                            <Countdown isLightVariant/>
                         </div>
                     </section>
                     <SignUpForm />
                 </main>
             </div>
-            {/* <div className="relative -z-20 -mt-[521px] h-[603px] bg-veryDark">
-                <img src={footerPattern} className="absolute -left-[40%] -top-[99%] max-w-none" />
-            </div> */}
+            <div className="absolute right-0 top-0 -z-20 mr-auto h-screen w-[25%] overflow-hidden bg-veryDark">
+                <img src={circlePattern} className="absolute max-w-none" />
+            </div>
         </>
     );
 };

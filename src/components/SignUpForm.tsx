@@ -26,7 +26,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <section className="mb-14 flex h-fit w-fit items-center justify-center rounded-xl px-11 py-10 shadow-2xl">
+        <section className="mb-14 flex h-fit w-fit items-center justify-center rounded-xl px-11 py-10 shadow-2xl bg-white">
             <form className="flex flex-col">
                 <Input type="text" name="name" placeholder="Name" label="Name" value={formData.name} onChange={handleInputOnChange} />
                 <Input type="text" name="email" placeholder="Email address" label="Email address"  value={formData.email} onChange={handleInputOnChange}/>

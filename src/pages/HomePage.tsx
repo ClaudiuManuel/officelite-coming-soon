@@ -57,7 +57,7 @@ const HomePage = () => {
                     </Link>
                 </footer>
             </div>
-            <div className="relative -z-20 -mt-[521px] h-[603px] bg-veryDark">
+            <div className="relative -z-20 -mt-[521px] h-[603px] overflow-hidden bg-veryDark">
                 <img src={footerPattern} className="absolute -left-[40%] -top-[99%] max-w-none" />
             </div>
         </>
