@@ -22,4 +22,5 @@ export type DropdownProps = {
 export type CountdownTileProps = {
     title: string;
     subtitle: string;
+    isLightVariant: boolean;
 }

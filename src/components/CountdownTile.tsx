@@ -1,10 +1,10 @@
 import { CountdownTileProps } from '@/types';
 
-const CountdownTile: React.FC<CountdownTileProps> = ({ title, subtitle }) => {
+const CountdownTile: React.FC<CountdownTileProps> = ({ title, subtitle, isLightVariant }) => {
     return (
-        <div className={'rounded-xl bg-dark p-4'}>
-            <h1 className="text-white">{title}</h1>
-            <p>{subtitle}</p>
+        <div className={`rounded-xl p-4 ${isLightVariant ? 'bg-lightBlue/25' : 'bg-dark'}`}>
+            <h1 className={isLightVariant ? 'text-accentBlue' : 'text-white '}>{title}</h1>
+            <p className="font-KumbhBold">{subtitle}</p>
         </div>
     );
 };
