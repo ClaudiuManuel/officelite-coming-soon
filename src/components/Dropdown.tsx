@@ -3,7 +3,7 @@ import arrow from '@assets/sign-up/arrow.svg';
 import tick from '../assets/sign-up/tick.svg';
 import { cn } from '../utils/tailwindUtilities';
 import { DropdownProps } from '@/types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSelectedOptionIndex }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,14 +27,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSe
                 />
             </button>
 
-            <AnimatePresence initial={false}>
                 {isOpen && (
                     <div className="relative">
                         <motion.div
-                            initial={{ opacity: 0, y: -20 }}
+                            initial={{ opacity: 0, y: -30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 0 }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration: 0.4 }}
                             className="absolute z-50 flex w-full flex-col rounded-lg border border-gray-700 border-opacity-20 bg-white py-2 pl-8 pr-8 shadow"
                         >
                             <ul>
@@ -64,7 +62,6 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSe
                         </motion.div>
                     </div>
                 )}
-            </AnimatePresence>
         </>
     );
 };
