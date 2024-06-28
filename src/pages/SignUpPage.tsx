@@ -31,7 +31,7 @@ const SignUpPage = () => {
                 </main>
             </div>
             <div className="absolute right-0 top-0 -z-20 mr-auto h-screen w-[25%] overflow-hidden bg-veryDark">
-                <img src={circlePattern} className="absolute max-w-none" />
+                <img src={circlePattern} className="absolute max-w-none w-full" />
             </div>
         </>
     );
