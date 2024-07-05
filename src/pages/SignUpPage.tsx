@@ -3,6 +3,7 @@ import Countdown from '../components/Countdown';
 import { Link } from 'react-router-dom';
 import SignUpForm from '@/components/SignUpForm';
 import circlePattern from '@assets/sign-up/signup-circle-pattern.svg';
+import ToastList from '@/components/ToastList';
 
 const SignUpPage = () => {
     return (
@@ -28,6 +29,7 @@ const SignUpPage = () => {
                         </div>
                     </section>
                     <SignUpForm />
+                    <ToastList />
                 </main>
             </div>
             <div className="absolute right-0 top-0 -z-20 h-screen w-[25%] overflow-hidden bg-veryDark">

@@ -1,7 +1,8 @@
 import Input from '../components/Input';
 import Dropdown from '../components/Dropdown';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
 import { pricingOptions } from '@/utils/constants';
+import { ToastContext } from './ToastProvider';
 
 type FormData = {
     name: string;
@@ -22,6 +23,7 @@ const initialState: FormData = {
 };
 
 const SignUpForm = () => {
+    const { addToast } = useContext(ToastContext);
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
     const dropdownOptions = pricingOptions.map((option) => {
         return { name: `${option.pricingTier} Pack`, price: option.price };
@@ -68,7 +70,11 @@ const SignUpForm = () => {
 
         if (Object.values(errors).every((error) => !error)) {
             setFormData(initialState);
+            addToast({ variant: 'success', message: 'Form submitted successfully' });
             console.log('Form submitted');
+        } else {
+            addToast({ variant: 'error', message: 'Form has errors' });
+            console.log('Form has errors');
         }
     };
 
