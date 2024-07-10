@@ -24,3 +24,10 @@ export type CountdownTileProps = {
     subtitle: string;
     isLightVariant: boolean;
 }
+
+export type Toast = {
+    variant: 'success' | 'error';
+    id: string;
+    message: string;
+    fadingOut: boolean;
+};

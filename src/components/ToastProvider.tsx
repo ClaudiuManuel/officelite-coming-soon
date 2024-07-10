@@ -1,11 +1,5 @@
 import { createContext, useEffect, useRef, useState } from 'react';
-
-export type Toast = {
-    variant: 'success' | 'error';
-    id: string;
-    message: string;
-    fadingOut: boolean;
-};
+import { Toast } from '@/types';
 
 type ToastContextType = {
     toasts: Toast[];
@@ -41,6 +35,7 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 
         if (timeouts.current[id]) {
             clearTimeout(timeouts.current[id]);
+            delete timeouts.current[id];
         }
     };
 
