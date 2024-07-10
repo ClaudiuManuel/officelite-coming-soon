@@ -53,7 +53,7 @@ const SignUpForm = () => {
     const validateForm = (formData: FormData) => {
         const { name, email, phone, company } = formData;
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        const phoneRegex = /^\d{10}$/;
+        const phoneRegex = /^\d+$/;
 
         return {
             name: name.length === 0,
@@ -71,10 +71,8 @@ const SignUpForm = () => {
         if (Object.values(errors).every((error) => !error)) {
             setFormData(initialState);
             addToast({ variant: 'success', message: 'Form submitted successfully' });
-            console.log('Form submitted');
         } else {
             addToast({ variant: 'error', message: 'Form has errors' });
-            console.log('Form has errors');
         }
     };
 

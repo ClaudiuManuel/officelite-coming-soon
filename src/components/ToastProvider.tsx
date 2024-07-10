@@ -1,11 +1,11 @@
 import { createContext, useEffect, useRef, useState } from 'react';
-import { Toast } from '@/types';
+import { BaseToast, Toast } from '@/types';
 
 type ToastContextType = {
     toasts: Toast[];
     setToasts: (toasts: Toast[]) => void;
     dismissToast: (id: string) => void;
-    addToast: (toast: Omit<Toast, 'id'>) => void;
+    addToast: (toast: BaseToast) => void;
 };
 
 export const ToastContext = createContext<ToastContextType | Record<string, never>>({});
@@ -14,7 +14,7 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
     const timeouts = useRef<Record<string, NodeJS.Timeout>>({});
 
-    const addToast = (toast: Omit<Toast, 'id'>) => {
+    const addToast = (toast: BaseToast) => {
         const toastToBeAdded = { ...toast, id: crypto.randomUUID(), fadingOut: false };
         setToasts((prevState) => [...prevState, toastToBeAdded]);
 

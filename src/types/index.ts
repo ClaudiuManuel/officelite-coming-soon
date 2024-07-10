@@ -11,7 +11,7 @@ export type Option = {
 export type DropDownOption = {
     name: string;
     price: string;
-}
+};
 
 export type DropdownProps = {
     options: DropDownOption[];
@@ -23,7 +23,7 @@ export type CountdownTileProps = {
     title: string;
     subtitle: string;
     isLightVariant: boolean;
-}
+};
 
 export type Toast = {
     variant: 'success' | 'error';
@@ -31,3 +31,5 @@ export type Toast = {
     message: string;
     fadingOut: boolean;
 };
+
+export type BaseToast = Omit<Toast, 'id' | 'fadingOut'>;
