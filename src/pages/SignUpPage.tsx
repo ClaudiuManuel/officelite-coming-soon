@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SignUpForm from '@/components/SignUpForm';
 import circlePattern from '@assets/sign-up/signup-circle-pattern.svg';
 import ToastList from '@/components/ToastList';
+import { SIGN_UP_PAGE } from '@/utils/constants';
 
 const SignUpPage = () => {
     return (
@@ -18,12 +19,10 @@ const SignUpPage = () => {
                     <section className="flex w-[50%] items-center justify-between">
                         <div className="flex flex-col justify-between text-left">
                             <header>
-                                <h1 className="leading-tight">Work smarter. Save time.</h1>
+                                <h1 className="leading-tight">{SIGN_UP_PAGE.TITLE}</h1>
                             </header>
                             <p className="mb-10 mt-6">
-                                Easily manage your projects. Get on the list and receive in-app perks available only to
-                                early subscribers. We are moving into final development and getting ready for official
-                                launch soon.
+                                {SIGN_UP_PAGE.DESCRIPTION}
                             </p>
                             <Countdown isLightVariant/>
                         </div>

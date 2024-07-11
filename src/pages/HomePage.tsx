@@ -5,7 +5,7 @@ import illustrations from '../assets/home/Group-15.svg';
 import circlePattern from '../assets/home/bg-pattern-header.svg';
 import footerPattern from '../assets/home/bg-pattern-footer.svg';
 import { Link } from 'react-router-dom';
-import { pricingOptions } from '@/utils/constants';
+import { BUTTON_TEXTS, HOME_PAGE, pricingOptions } from '@/utils/constants';
 
 const HomePage = () => {
     return (
@@ -19,16 +19,12 @@ const HomePage = () => {
                     <section className="flex items-center justify-between">
                         <div className="flex w-[52%] flex-col justify-between pb-16 text-left">
                             <header>
-                                <h1 className="leading-tight">A simple solution to complex tasks is coming soon</h1>
+                                <h1 className="w-10/12 leading-tight">{HOME_PAGE.TITLE}</h1>
                             </header>
-                            <p className="my-6">
-                                Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is
-                                the new collaboration platform built with an intuitive interface to improve
-                                productivity.
-                            </p>
+                            <p className="my-6 w-[76%]">{HOME_PAGE.DESCRIPTION}</p>
                             <Link to="/signup">
                                 <button className=" h-[56px] w-[171px] bg-accentBlue text-white hover:bg-lightBlue">
-                                    Get Started
+                                    {BUTTON_TEXTS.GET_STARTED}
                                 </button>
                             </Link>
                         </div>
@@ -52,7 +48,7 @@ const HomePage = () => {
                     <Countdown />
                     <Link to="/signup">
                         <button className=" h-[56px] w-[171px] bg-accentBlue text-white hover:bg-lightBlue">
-                            Get Started
+                            {BUTTON_TEXTS.GET_STARTED}
                         </button>
                     </Link>
                 </footer>

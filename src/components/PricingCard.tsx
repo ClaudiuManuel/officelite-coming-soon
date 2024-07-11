@@ -2,6 +2,7 @@ import { cn } from '../utils/tailwindUtilities';
 import circlesPatternCard from '../assets/home/bg-pattern-pricing.svg';
 import { Link } from 'react-router-dom';
 import { Option } from '@/types';
+import { BUTTON_TEXTS } from '@/utils/constants';
 
 const PricingCard: React.FC<Option> = ({
     price,
@@ -46,7 +47,7 @@ const PricingCard: React.FC<Option> = ({
                         }
                     )}
                 >
-                    Try for Free
+                    {BUTTON_TEXTS.TRY_FOR_FREE}
                 </button>
             </Link>
         </div>

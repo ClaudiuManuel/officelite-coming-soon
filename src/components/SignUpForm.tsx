@@ -1,7 +1,7 @@
 import Input from '../components/Input';
 import Dropdown from '../components/Dropdown';
 import { ChangeEvent, useContext, useState } from 'react';
-import { pricingOptions } from '@/utils/constants';
+import { BUTTON_TEXTS, pricingOptions } from '@/utils/constants';
 import { ToastContext } from './ToastProvider';
 
 type FormData = {
@@ -121,7 +121,7 @@ const SignUpForm = () => {
                     invalid={formErrors.company}
                 />
                 <button type="submit" className=" h-[56px] bg-accentBlue text-white hover:bg-lightBlue">
-                    Get on the list
+                    {BUTTON_TEXTS.GET_ON_THE_LIST}
                 </button>
             </form>
         </section>
