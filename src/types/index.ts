@@ -25,6 +25,13 @@ export type CountdownTileProps = {
     isLightVariant: boolean;
 };
 
+export type ToastContextType = {
+    toasts: Toast[];
+    setToasts: (toasts: Toast[]) => void;
+    dismissToast: (id: string) => void;
+    addToast: (toast: BaseToast) => void;
+};
+
 export type Toast = {
     variant: 'success' | 'error';
     id: string;
@@ -33,3 +40,4 @@ export type Toast = {
 };
 
 export type BaseToast = Omit<Toast, 'id' | 'fadingOut'>;
+

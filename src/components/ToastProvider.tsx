@@ -1,12 +1,5 @@
 import { createContext, useEffect, useRef, useState } from 'react';
-import { BaseToast, Toast } from '@/types';
-
-type ToastContextType = {
-    toasts: Toast[];
-    setToasts: (toasts: Toast[]) => void;
-    dismissToast: (id: string) => void;
-    addToast: (toast: BaseToast) => void;
-};
+import { BaseToast, Toast, ToastContextType } from '@/types';
 
 export const ToastContext = createContext<ToastContextType | Record<string, never>>({});
 

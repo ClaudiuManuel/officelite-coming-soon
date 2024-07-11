@@ -7,10 +7,9 @@ const Countdown = ({ isLightVariant = false }: { isLightVariant?: boolean }) => 
                 Coming <span className="text-accentBlue">4 NOV 2020</span>
             </h3>
             <div className={'flex gap-4'}>
-                <CountdownTile title={'47'} subtitle={'days'} isLightVariant={isLightVariant} />
-                <CountdownTile title={'07'} subtitle={'hours'} isLightVariant={isLightVariant} />
-                <CountdownTile title={'56'} subtitle={'min'} isLightVariant={isLightVariant} />
-                <CountdownTile title={'14'} subtitle={'sec'} isLightVariant={isLightVariant} />
+                {[...Array(3).keys()].map((_, index) => {
+                    return <CountdownTile key={index} title={'00'} subtitle={'days'} isLightVariant={isLightVariant} />;
+                })}
             </div>
         </div>
     );
