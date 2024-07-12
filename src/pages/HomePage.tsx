@@ -10,7 +10,7 @@ import { BUTTON_TEXTS, HOME_PAGE, pricingOptions } from '@/utils/constants';
 const HomePage = () => {
     return (
         <>
-            <img src={circlePattern} className="absolute -right-[19%] -top-[24%] -z-10" />
+            <img src={circlePattern} className="absolute -right-[27%] -top-[74%] -z-10 w-[88%]" />
             <div className="mx-auto max-w-[1340px]">
                 <header>
                     <img src={officeliteLogo} alt="officelite logo" className="mb-[102px] mt-[81px]" />

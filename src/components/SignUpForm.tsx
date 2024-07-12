@@ -3,17 +3,7 @@ import Dropdown from '../components/Dropdown';
 import { ChangeEvent, useContext, useState } from 'react';
 import { BUTTON_TEXTS, pricingOptions } from '@/utils/constants';
 import { ToastContext } from './ToastProvider';
-
-type FormData = {
-    name: string;
-    email: string;
-    phone: string;
-    company: string;
-};
-
-type FormErrors = {
-    [K in keyof FormData]: boolean;
-};
+import { FormErrors, FormData, DropdownMarker, FormField } from '@/types';
 
 const initialState: FormData = {
     name: '',
@@ -21,6 +11,36 @@ const initialState: FormData = {
     phone: '',
     company: '',
 };
+
+const formFields: Array<FormField | DropdownMarker> = [
+    {
+        label: 'Name',
+        name: 'name',
+        type: 'text',
+        placeholder: 'Name',
+    },
+    {
+        label: 'Email address',
+        name: 'email',
+        type: 'text',
+        placeholder: 'Email address',
+    },
+    {
+        name: 'dropdown',
+    },
+    {
+        label: 'Phone number',
+        name: 'phone',
+        type: 'string',
+        placeholder: 'Phone number',
+    },
+    {
+        label: 'Company',
+        name: 'company',
+        type: 'text',
+        placeholder: 'Company',
+    },
+];
 
 const SignUpForm = () => {
     const { addToast } = useContext(ToastContext);
@@ -79,47 +99,30 @@ const SignUpForm = () => {
     return (
         <section className="mb-14 flex h-fit w-fit items-center justify-center rounded-xl bg-white px-11 py-10 shadow-2xl">
             <form className="flex flex-col" onSubmit={handleSubmit}>
-                <Input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    label="Name"
-                    value={formData.name}
-                    onChange={handleInputOnChange}
-                    invalid={formErrors.name}
-                />
-                <Input
-                    type="text"
-                    name="email"
-                    placeholder="Email address"
-                    label="Email address"
-                    value={formData.email}
-                    onChange={handleInputOnChange}
-                    invalid={formErrors.email}
-                />
-                <Dropdown
-                    options={dropdownOptions}
-                    selectedOptionIndex={selectedOptionIndex}
-                    setSelectedOptionIndex={setSelectedOptionIndex}
-                />
-                <Input
-                    type="string"
-                    name="phone"
-                    placeholder="Phone number"
-                    label="Phone number"
-                    value={formData.phone}
-                    onChange={handleInputOnChange}
-                    invalid={formErrors.phone}
-                />
-                <Input
-                    type="text"
-                    name="company"
-                    placeholder="Company"
-                    label="Company"
-                    value={formData.company}
-                    onChange={handleInputOnChange}
-                    invalid={formErrors.company}
-                />
+                {formFields.map((field) => {
+                    if (field.name === 'dropdown') {
+                        return (
+                            <Dropdown
+                                options={dropdownOptions}
+                                selectedOptionIndex={selectedOptionIndex}
+                                setSelectedOptionIndex={setSelectedOptionIndex}
+                            />
+                        );
+                    } else {
+                        const typeAssertedField = field as FormField;
+                        return (
+                            <Input
+                                type={typeAssertedField.type}
+                                name={typeAssertedField.name}
+                                placeholder={typeAssertedField.placeholder}
+                                label={typeAssertedField.label}
+                                value={formData[typeAssertedField.name]}
+                                onChange={handleInputOnChange}
+                                invalid={formErrors[typeAssertedField.name]}
+                            />
+                        );
+                    }
+                })}
                 <button type="submit" className=" h-[56px] bg-accentBlue text-white hover:bg-lightBlue">
                     {BUTTON_TEXTS.GET_ON_THE_LIST}
                 </button>

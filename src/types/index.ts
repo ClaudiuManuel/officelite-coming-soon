@@ -41,3 +41,25 @@ export type Toast = {
 
 export type BaseToast = Omit<Toast, 'id' | 'fadingOut'>;
 
+
+export type FormData = {
+    name: string;
+    email: string;
+    phone: string;
+    company: string;
+};
+
+export type FormErrors = {
+    [K in keyof FormData]: boolean;
+};
+
+
+export type FormField = {
+    label: string;
+    name: keyof FormData;
+    type: string;
+    placeholder: string;
+};
+
+export type DropdownMarker = { name: string };
+
