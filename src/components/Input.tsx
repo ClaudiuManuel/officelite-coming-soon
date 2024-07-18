@@ -1,16 +1,6 @@
-import { ChangeEvent } from 'react';
 import errorInputIcon from '../assets/sign-up/icon-cross.svg';
 import { cn } from '@/utils/tailwindUtilities';
-
-export type InputProps = {
-    label: string;
-    name: string;
-    type: React.HTMLInputTypeAttribute;
-    placeholder: string;
-    value: string | number;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    invalid: boolean;
-};
+import { InputProps } from '@/types';
 
 const Input: React.FC<InputProps> = ({ label, name, type, placeholder, value, onChange, invalid }) => {
     return (

@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 export type Option = {
     subtitle: string;
     price: string;
@@ -19,9 +21,17 @@ export type DropdownProps = {
     setSelectedOptionIndex: React.Dispatch<React.SetStateAction<number>>;
 };
 
+
+export type TimeRemaining = {
+    days: string;
+    hours: string;
+    minutes: string;
+    seconds: string;
+};
+
 export type CountdownTileProps = {
-    title: string;
-    subtitle: string;
+    digitPair: string;
+    timeUnit: keyof TimeRemaining;
     isLightVariant: boolean;
 };
 
@@ -41,7 +51,6 @@ export type Toast = {
 
 export type BaseToast = Omit<Toast, 'id' | 'fadingOut'>;
 
-
 export type FormData = {
     name: string;
     email: string;
@@ -53,7 +62,6 @@ export type FormErrors = {
     [K in keyof FormData]: boolean;
 };
 
-
 export type FormField = {
     label: string;
     name: keyof FormData;
@@ -63,3 +71,12 @@ export type FormField = {
 
 export type DropdownMarker = { name: string };
 
+export type InputProps = {
+    label: string;
+    name: string;
+    type: React.HTMLInputTypeAttribute;
+    placeholder: string;
+    value: string | number;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    invalid: boolean;
+};
