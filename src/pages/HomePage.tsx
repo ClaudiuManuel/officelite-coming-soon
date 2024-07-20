@@ -6,11 +6,23 @@ import circlePattern from '../assets/home/bg-pattern-header.svg';
 import footerPattern from '../assets/home/bg-pattern-footer.svg';
 import { Link } from 'react-router-dom';
 import { BUTTON_TEXTS, HOME_PAGE, pricingOptions } from '@/utils/constants';
+import { motion } from 'framer-motion';
 
 const HomePage = () => {
     return (
         <>
-            <img src={circlePattern} className="absolute -right-[27%] -top-[74%] -z-10 w-[88%]" />
+            <motion.img
+                src={circlePattern}
+                className="absolute -right-[27%] -top-[74%] -z-10 w-[88%]"
+                // accelerate the rotation while the dots are off-screen
+                animate={{ rotate: [0, 125, 220, 360] }}
+                transition={{
+                    repeat: Infinity,
+                    duration: 8,
+                    times: [0, 0.47, 0.48, 1], // Control the percentage of time spent at each keyframe
+                    ease: ['linear'], 
+                }}
+            />
             <div className="mx-auto max-w-[1340px]">
                 <header>
                     <img src={officeliteLogo} alt="officelite logo" className="mb-[102px] mt-[81px]" />
@@ -36,7 +48,7 @@ const HomePage = () => {
                         <ul className="z-30 mb-[82px] mt-[140px] flex justify-between">
                             {pricingOptions.map((item) => {
                                 return (
-                                    <li>
+                                    <li key={item.pricingTier}>
                                         <PricingCard {...item} />
                                     </li>
                                 );
@@ -54,7 +66,12 @@ const HomePage = () => {
                 </footer>
             </div>
             <div className="relative -z-20 -mt-[521px] h-[603px] overflow-hidden bg-veryDark">
-                <img src={footerPattern} className="absolute -left-[40%] -top-[99%] max-w-none" />
+                <motion.img
+                    src={footerPattern}
+                    className="absolute -left-[40%] -top-[99%] max-w-none"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 6, ease: 'linear' }}
+                />
             </div>
         </>
     );
