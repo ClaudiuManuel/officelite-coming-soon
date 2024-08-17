@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import officeliteLogo from '../assets/shared/logo.svg';
 import circlePattern from '@assets/sign-up/signup-circle-pattern.svg';
 import { BUTTON_TEXTS, NOT_FOUND_PAGE } from '@utils/constants';
+import { motion } from 'framer-motion';
 
 const ErrorPage = () => {
     return (
@@ -28,7 +29,13 @@ const ErrorPage = () => {
             </div>
 
             <div className="absolute right-0 top-0 -z-20 h-screen w-[25%] overflow-hidden bg-veryDark">
-                <img src={circlePattern} className="absolute h-screen w-full" />
+                <motion.img
+                    src={circlePattern}
+                    className="absolute h-auto w-full origin-center"
+                    initial={{ scale: 3 }}
+                    animate={{ rotate: 360, scale: 3 }}
+                    transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                />
             </div>
         </>
     );

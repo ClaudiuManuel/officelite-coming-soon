@@ -14,13 +14,11 @@ const HomePage = () => {
             <motion.img
                 src={circlePattern}
                 className="absolute -right-[27%] -top-[74%] -z-10 w-[88%]"
-                // accelerate the rotation while the dots are off-screen
-                animate={{ rotate: [0, 125, 220, 360] }}
+                animate={{ rotate: 360 }}
                 transition={{
                     repeat: Infinity,
-                    duration: 8,
-                    times: [0, 0.47, 0.48, 1], // Control the percentage of time spent at each keyframe
-                    ease: ['linear'], 
+                    duration: 10,
+                    ease: 'linear', 
                 }}
             />
             <div className="mx-auto max-w-[1340px]">
@@ -70,7 +68,7 @@ const HomePage = () => {
                     src={footerPattern}
                     className="absolute -left-[40%] -top-[99%] max-w-none"
                     animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 6, ease: 'linear' }}
+                    transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
                 />
             </div>
         </>
