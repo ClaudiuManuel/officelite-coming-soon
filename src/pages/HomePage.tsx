@@ -12,13 +12,14 @@ const HomePage = () => {
     return (
         <>
             <motion.img
+                alt="circle pattern"
                 src={circlePattern}
                 className="absolute -right-[27%] -top-[74%] -z-10 w-[88%]"
                 animate={{ rotate: 360 }}
                 transition={{
                     repeat: Infinity,
                     duration: 10,
-                    ease: 'linear', 
+                    ease: 'linear',
                 }}
             />
             <div className="mx-auto max-w-[1340px]">
@@ -65,6 +66,7 @@ const HomePage = () => {
             </div>
             <div className="relative -z-20 -mt-[521px] h-[603px] overflow-hidden bg-veryDark">
                 <motion.img
+                    alt="circle pattern"
                     src={footerPattern}
                     className="absolute -left-[40%] -top-[99%] max-w-none"
                     animate={{ rotate: 360 }}

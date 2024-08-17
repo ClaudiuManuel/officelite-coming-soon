@@ -13,7 +13,7 @@ const SignUpPage = () => {
             <div className="mx-auto max-w-[1340px]">
                 <header>
                     <Link to={'/'}>
-                        <img src={officeliteLogo} alt="officelite logo" className="mb-[102px] mt-[81px]" />
+                        <img  src={officeliteLogo} alt="officelite logo" className="mb-[102px] mt-[81px]" />
                     </Link>
                 </header>
                 <main className="flex justify-between">
@@ -32,6 +32,7 @@ const SignUpPage = () => {
             </div>
             <div className="absolute right-0 top-0 -z-20 h-screen w-[25%] overflow-hidden bg-veryDark">
                 <motion.img
+                    alt="circle pattern"
                     src={circlePattern}
                     className="absolute h-auto w-full origin-center"
                     initial={{ scale: 3 }}

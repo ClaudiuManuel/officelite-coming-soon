@@ -24,6 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSe
                     className={cn('duration-400 transition-transform', {
                         'rotate-180': isOpen,
                     })}
+                    alt='open indicator arrow'
                 />
             </button>
 
@@ -54,7 +55,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, selectedOptionIndex, setSe
                                         {name}
                                         <span className="ml-2 text-lightGray group-hover:text-accentBlue">{price}</span>
                                     </span>
-                                    {index === selectedOptionIndex && <img src={tick} />}
+                                    {index === selectedOptionIndex && <img alt='tick check' src={tick} />}
                                 </li>
                             ))}
                         </ul>

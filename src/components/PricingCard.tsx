@@ -27,7 +27,13 @@ const PricingCard: React.FC<Option> = ({
                 }
             )}
         >
-            {isAccentVariant && <img src={circlesPatternCard} className="absolute -top-[76%] -z-10 max-w-none"></img>}
+            {isAccentVariant && (
+                <img
+                    src={circlesPatternCard}
+                    alt="circle pattern"
+                    className="absolute -top-[76%] -z-10 max-w-none"
+                ></img>
+            )}
             <header className="text-center">
                 <h2 className={headerTextColors}>{pricingTier}</h2>
                 <h1 className={`${headerTextColors} mb-4 mt-10 leading-none`}>{price}</h1>
